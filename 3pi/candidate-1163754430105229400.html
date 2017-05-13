@@ -17,6 +17,14 @@ var jslimitsglobal = new Object();
 
 
 <script language="javascript" type="text/javascript">
+var jsrecurrencedataglobal = new Object();
+var jsrecurrencelabelsglobal = new Object();
+var jsrecurrencelimitsglobal = new Object();
+</script>
+
+
+
+<script language="javascript" type="text/javascript">
 var jslcdata = new Array();
 var jslabels = new Array();
 // We have an array with 4 elements. Each element is another array of n elements (usually 5).
@@ -36,11 +44,11 @@ var jslabels = new Array();
 
 // 2013-02-14 KWS Change the xmin to the FIRST value of the xmin array (which doesn't include the limit dates).
 var jslclimits = {  "xmin": 56471.3943439, 
-                   "xmax": 57883.3527969,
+                   "xmax": 57886.3612048,
                    "ymin": 18.3251,
                    "ymax": 21.4151,
                    "discoveryDate": 57135.5561815,
-                   "today": 57883.3527969 };
+                   "today": 57886.3612048 };
 
 jslimitsglobal["#flot-lightcurve"] = jslclimits;
 
@@ -235,6 +243,10 @@ var jsrecurrencelimits = { "xmin": -3.0,  // arcsec
   jsrecurrencelabels.push({"color": 22, "display": true, "label": "mean coords (rms = 0.10)"});
 
 
+jsrecurrencelimitsglobal["#flot-recurrenceplot"] = jsrecurrencelimits;
+jsrecurrencedataglobal["#flot-recurrenceplot"] = jsrecurrencedata;
+jsrecurrencelabelsglobal["#flot-recurrenceplot"] = jsrecurrencelabels;
+
 </script>
 
 
@@ -262,7 +274,7 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 <li>
 
 
-<form id="search_form" action="/ps1threepi/searchresults/" method="post"><input type='hidden' name='csrfmiddlewaretoken' value='pgbCG8ukSYhPyzABnfORllCiHVJFtCAD' />
+<form id="search_form" action="/ps1threepi/searchresults/" method="post"><input type='hidden' name='csrfmiddlewaretoken' value='TI5c9UsCDkb2a5MGvCdGRZN1LvBaIw6Y' />
     
     <div class="fieldWrapper">
     <p>
@@ -302,9 +314,14 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 
 
 
+
 <hgroup class="hgroup">
-<div class="hg2"><h3><span class="objectinfo">Comments: </span>Clear variable star. Cross-match algorithm wrongly associates the transient with the galaxy, not the star. </h3></div>
+<div class="hg2"><h3><span class="objectinfo">Nov. 2, 2015, 3:43 p.m.: </span>Clear variable star. Cross-match algorithm wrongly associates the transient with the galaxy, not the star. </h3></div>
 </hgroup>
+
+
+
+
 
 
 </header>
@@ -352,7 +369,9 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 
 
 
+<script language="javascript" type="text/javascript">var recdivname = "#flot-recurrenceplot";</script>
 <script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/recurrenceplot.js"></script>
+
 <script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/mjdcalc.js"></script>
 
 

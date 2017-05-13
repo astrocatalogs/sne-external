@@ -17,6 +17,14 @@ var jslimitsglobal = new Object();
 
 
 <script language="javascript" type="text/javascript">
+var jsrecurrencedataglobal = new Object();
+var jsrecurrencelabelsglobal = new Object();
+var jsrecurrencelimitsglobal = new Object();
+</script>
+
+
+
+<script language="javascript" type="text/javascript">
 var jslcdata = new Array();
 var jslabels = new Array();
 // We have an array with 4 elements. Each element is another array of n elements (usually 5).
@@ -36,11 +44,11 @@ var jslabels = new Array();
 
 // 2013-02-14 KWS Change the xmin to the FIRST value of the xmin array (which doesn't include the limit dates).
 var jslclimits = {  "xmin": 56621.6261992, 
-                   "xmax": 57883.3403039,
+                   "xmax": 57886.3483629,
                    "ymin": 16.3651,
                    "ymax": 17.4274,
                    "discoveryDate": 56701.4403374,
-                   "today": 57883.3403039 };
+                   "today": 57886.3483629 };
 
 jslimitsglobal["#flot-lightcurve"] = jslclimits;
 
@@ -210,11 +218,11 @@ var jscolourdata = new Array();
 var jscolourlabels = new Array();
 // The colour limits currently rely on the lightcurve data, but in future we may change this
 var jscolourlimits = {  "xmin": 56621.6261992, 
-                       "xmax": 57883.3403039,
+                       "xmax": 57886.3483629,
                        "ymin": -0.00735,
                        "ymax": -0.00735,
                        "discoveryDate": 56701.4403374,
-                       "today": 57883.3403039 };
+                       "today": 57886.3483629 };
 
 jscolourlimitsglobal["#flot-colourplot"] = jscolourlimits;
 
@@ -283,6 +291,10 @@ var jsrecurrencelimits = { "xmin": -3.0,  // arcsec
   jsrecurrencelabels.push({"color": 22, "display": true, "label": "mean coords (rms = 0.06)"});
 
 
+jsrecurrencelimitsglobal["#flot-recurrenceplot"] = jsrecurrencelimits;
+jsrecurrencedataglobal["#flot-recurrenceplot"] = jsrecurrencedata;
+jsrecurrencelabelsglobal["#flot-recurrenceplot"] = jsrecurrencelabels;
+
 </script>
 
 
@@ -310,7 +322,7 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 <li>
 
 
-<form id="search_form" action="/ps1threepi/searchresults/" method="post"><input type='hidden' name='csrfmiddlewaretoken' value='nYDRpqHUuw9ckxDxzUAT1JLek7XCHUHC' />
+<form id="search_form" action="/ps1threepi/searchresults/" method="post"><input type='hidden' name='csrfmiddlewaretoken' value='ZJyDkdcATcQoeZluGC6stn2367mZi9GI' />
     
     <div class="fieldWrapper">
     <p>
@@ -383,9 +395,14 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 
 
 
+
 <hgroup class="hgroup">
-<div class="hg2"><h3><span class="objectinfo">Comments: </span>MASTER OT J084721.16+731313.7. MASTER proposes this to be a CV. Looks offset from blue host, but also looks like there is a possible fainter host in ref image: Observed at Lulin (photometry) on 2014-02-20. Observed at Asiago (spectroscopy) on 2014-03-09. </h3></div>
+<div class="hg2"><h3><span class="objectinfo">March 11, 2014, 2:46 p.m.: </span>MASTER OT J084721.16+731313.7. MASTER proposes this to be a CV. Looks offset from blue host, but also looks like there is a possible fainter host in ref image: Observed at Lulin (photometry) on 2014-02-20. Observed at Asiago (spectroscopy) on 2014-03-09. </h3></div>
 </hgroup>
+
+
+
+
 
 
 </header>
@@ -438,7 +455,9 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 
 
 
+<script language="javascript" type="text/javascript">var recdivname = "#flot-recurrenceplot";</script>
 <script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/recurrenceplot.js"></script>
+
 <script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/mjdcalc.js"></script>
 
 

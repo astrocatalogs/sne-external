@@ -17,6 +17,14 @@ var jslimitsglobal = new Object();
 
 
 <script language="javascript" type="text/javascript">
+var jsrecurrencedataglobal = new Object();
+var jsrecurrencelabelsglobal = new Object();
+var jsrecurrencelimitsglobal = new Object();
+</script>
+
+
+
+<script language="javascript" type="text/javascript">
 var jslcdata = new Array();
 var jslabels = new Array();
 // We have an array with 4 elements. Each element is another array of n elements (usually 5).
@@ -36,11 +44,11 @@ var jslabels = new Array();
 
 // 2013-02-14 KWS Change the xmin to the FIRST value of the xmin array (which doesn't include the limit dates).
 var jslclimits = {  "xmin": 56450.3920264, 
-                   "xmax": 57883.3485161,
+                   "xmax": 57886.3568341,
                    "ymin": 17.7677,
                    "ymax": 20.2993,
                    "discoveryDate": 57095.5863332,
-                   "today": 57883.3485161 };
+                   "today": 57886.3568341 };
 
 jslimitsglobal["#flot-lightcurve"] = jslclimits;
 
@@ -210,11 +218,11 @@ var jscolourdata = new Array();
 var jscolourlabels = new Array();
 // The colour limits currently rely on the lightcurve data, but in future we may change this
 var jscolourlimits = {  "xmin": 56450.3920264, 
-                       "xmax": 57883.3485161,
+                       "xmax": 57886.3568341,
                        "ymin": 0.1014,
                        "ymax": 0.1014,
                        "discoveryDate": 57095.5863332,
-                       "today": 57883.3485161 };
+                       "today": 57886.3568341 };
 
 jscolourlimitsglobal["#flot-colourplot"] = jscolourlimits;
 
@@ -283,6 +291,10 @@ var jsrecurrencelimits = { "xmin": -3.0,  // arcsec
   jsrecurrencelabels.push({"color": 22, "display": true, "label": "mean coords (rms = 0.12)"});
 
 
+jsrecurrencelimitsglobal["#flot-recurrenceplot"] = jsrecurrencelimits;
+jsrecurrencedataglobal["#flot-recurrenceplot"] = jsrecurrencedata;
+jsrecurrencelabelsglobal["#flot-recurrenceplot"] = jsrecurrencelabels;
+
 </script>
 
 
@@ -310,7 +322,7 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 <li>
 
 
-<form id="search_form" action="/ps1threepi/searchresults/" method="post"><input type='hidden' name='csrfmiddlewaretoken' value='TNq1FcdWNamleZSBroyKRRA7sqHxgFy5' />
+<form id="search_form" action="/ps1threepi/searchresults/" method="post"><input type='hidden' name='csrfmiddlewaretoken' value='c95hRNNeuzemMP1VeWBtlGjQWsJ5KfSI' />
     
     <div class="fieldWrapper">
     <p>
@@ -342,7 +354,7 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 
      
         
-          <a href="http://www.rochesterastronomy.org/supernova.html#ASASSN-15ed">ASASSN-15ed</a>
+          <a href="http://www.astronomy.ohio-state.edu/~assassin/sn_list.html">ASASSN-15ed</a>
         
      
 
@@ -379,9 +391,14 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 
 
 
+
 <hgroup class="hgroup">
-<div class="hg2"><h3><span class="objectinfo">Comments: </span>ASASSN-15ed. ATel 7219. Asiago spectrum 20150313.15  z= 0.049  SN Ibn  (young) </h3></div>
+<div class="hg2"><h3><span class="objectinfo">March 17, 2015, 9:47 a.m.: </span>ASASSN-15ed. ATel 7219. Asiago spectrum 20150313.15  z= 0.049  SN Ibn  (young) </h3></div>
 </hgroup>
+
+
+
+
 
 
 </header>
@@ -434,7 +451,9 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 
 
 
+<script language="javascript" type="text/javascript">var recdivname = "#flot-recurrenceplot";</script>
 <script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/recurrenceplot.js"></script>
+
 <script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/mjdcalc.js"></script>
 
 

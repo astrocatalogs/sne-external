@@ -17,6 +17,14 @@ var jslimitsglobal = new Object();
 
 
 <script language="javascript" type="text/javascript">
+var jsrecurrencedataglobal = new Object();
+var jsrecurrencelabelsglobal = new Object();
+var jsrecurrencelimitsglobal = new Object();
+</script>
+
+
+
+<script language="javascript" type="text/javascript">
 var jslcdata = new Array();
 var jslabels = new Array();
 // We have an array with 4 elements. Each element is another array of n elements (usually 5).
@@ -36,11 +44,11 @@ var jslabels = new Array();
 
 // 2013-02-14 KWS Change the xmin to the FIRST value of the xmin array (which doesn't include the limit dates).
 var jslclimits = {  "xmin": 56668.6616622, 
-                   "xmax": 57883.4049081,
+                   "xmax": 57886.4148656,
                    "ymin": 19.1515,
-                   "ymax": 19.3468,
+                   "ymax": 19.3498,
                    "discoveryDate": 57818.3936778,
-                   "today": 57883.4049081 };
+                   "today": 57886.4148656 };
 
 jslimitsglobal["#flot-lightcurve"] = jslclimits;
 
@@ -54,7 +62,7 @@ jslimitsglobal["#flot-lightcurve"] = jslclimits;
   
     jslcdata.push([]);
   
-    jslcdata.push([[57818.3936778115, 19.2394, 0.0430337], [57818.3943223264, 19.2582, 0.0376176], [57818.4051263669, 19.228, 0.0450934], [57818.4057717052, 19.211, 0.0422471], [57818.4166039112, 19.3468, 0.0520191], [57818.4172439055, 19.3072, 0.0442452], [57818.4281795808, 19.2755, 0.0594187], [57818.4288274366, 19.235, 0.0537937], [57854.4329112027, 19.1515, 0.217713], [57854.4442820475, 19.262, 0.176029], [57854.4556932379, 19.2198, 0.140718]]);
+    jslcdata.push([[57818.3936778115, 19.2394, 0.0430337], [57818.3943223264, 19.2582, 0.0376176], [57818.4051263669, 19.228, 0.0450934], [57818.4057717052, 19.211, 0.0422471], [57818.4166039112, 19.3468, 0.0520191], [57818.4172439055, 19.3072, 0.0442452], [57818.4281795808, 19.2755, 0.0594187], [57818.4288274366, 19.235, 0.0537937], [57854.4329112027, 19.1515, 0.217713], [57854.4442820475, 19.262, 0.176029], [57854.4556932379, 19.2198, 0.140718], [57883.3153833062, 19.3271, 0.0631093], [57883.327502103, 19.3498, 0.199462]]);
   
     jslcdata.push([]);
   
@@ -220,11 +228,11 @@ var jsrecurrencelimits = { "xmin": -3.0,  // arcsec
                            "ymax": 3.0 };
 
 
-  jsrecurrencedata.push([[0.014090642277957944, 0.03291835818970412], [-0.09854172703990421, 0.045480481793447325], [-0.10756029977596292, -0.038313225935837636], [-0.061327885317473886, -0.009716250511360158], [-0.0027828523054181545, -0.0613743895769403], [-0.045223133032286915, -0.027116487487433005], [-0.06102457241901186, 0.07734063233044708], [-0.03399224585933367, -0.07142358797835868], [0.03831542850479816, -0.06212718553371133], [-0.0, 0.0], [-0.006212118213219337, -0.0036430677610610473]]);
+  jsrecurrencedata.push([[-0.15183523509667593, -0.0873591083504266], [-0.048616177353363745, -0.014861097363905174], [0.014090642277957944, 0.03291835818970412], [-0.09854172703990421, 0.045480481793447325], [-0.10756029977596292, -0.038313225935837636], [-0.061327885317473886, -0.009716250511360158], [-0.0027828523054181545, -0.0613743895769403], [-0.045223133032286915, -0.027116487487433005], [-0.06102457241901186, 0.07734063233044708], [-0.03399224585933367, -0.07142358797835868], [0.03831542850479816, -0.06212718553371133], [-0.0, 0.0], [-0.006212118213219337, -0.0036430677610610473]]);
 
   jsrecurrencedata.push([[0, 0]]);
 
-  jsrecurrencedata.push([[-0.033114432402022095, -0.010724974777076568]]);
+  jsrecurrencedata.push([[-0.043439246561725674, -0.016938071399863475]]);
 
 
 
@@ -232,8 +240,12 @@ var jsrecurrencelimits = { "xmin": -3.0,  // arcsec
 
   jsrecurrencelabels.push({"color": 21, "display": true, "label": "1st detection"});
 
-  jsrecurrencelabels.push({"color": 22, "display": true, "label": "mean coords (rms = 0.06)"});
+  jsrecurrencelabels.push({"color": 22, "display": true, "label": "mean coords (rms = 0.07)"});
 
+
+jsrecurrencelimitsglobal["#flot-recurrenceplot"] = jsrecurrencelimits;
+jsrecurrencedataglobal["#flot-recurrenceplot"] = jsrecurrencedata;
+jsrecurrencelabelsglobal["#flot-recurrenceplot"] = jsrecurrencelabels;
 
 </script>
 
@@ -245,8 +257,8 @@ var jsrecurrencelimits = { "xmin": -3.0,  // arcsec
 
 <script type="text/javascript">
 // 2012-12-07 KWS Added DR9 equivalents
-var a = new Image(); a.src = 'http://skyserver.sdss3.org/dr9/en/tools/chart/navi.asp?ra=170.694865222&dec=28.3056656677&scale=0.1&width=500&height=500&opt=GPS';
-var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpeg.aspx?ra=170.694865222&dec=28.3056656677&scale=0.1&width=500&height=500&opt=GPS';
+var a = new Image(); a.src = 'http://skyserver.sdss3.org/dr9/en/tools/chart/navi.asp?ra=170.694861965&dec=28.3056673935&scale=0.1&width=500&height=500&opt=GPS';
+var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpeg.aspx?ra=170.694861965&dec=28.3056673935&scale=0.1&width=500&height=500&opt=GPS';
 </script>
 
 
@@ -262,7 +274,7 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 <li>
 
 
-<form id="search_form" action="/ps1threepi/searchresults/" method="post"><input type='hidden' name='csrfmiddlewaretoken' value='pfsWCPGYupGezSzbxn7WRMtksLAmBZSy' />
+<form id="search_form" action="/ps1threepi/searchresults/" method="post"><input type='hidden' name='csrfmiddlewaretoken' value='9IPLS08KKr1UNGm64984laMgbCqiIwDv' />
     
     <div class="fieldWrapper">
     <p>
@@ -287,7 +299,7 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 
 </h1>
 <h2>&nbsp;</h2>
-<h2>11:22:46.76 +28:18:20.3</h2>
+<h2>11:22:46.76 +28:18:20.4</h2>
 
 <h2>&nbsp;</h2>
 <h3><span class="objectinfo">See also: </span>
@@ -306,16 +318,21 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 
 <hgroup class="hgroup">
 <div class="hg1"><h3><span class="objectinfo">Flag Date: </span>March 7, 2017</h3></div>
-<div class="hg1"><h3><span class="objectinfo">Number of Detections: </span>11</h3></div>
+<div class="hg1"><h3><span class="objectinfo">Number of Detections: </span>13</h3></div>
 <div class="hg1"><h3><span class="objectinfo">Contextual Classification: </span>sn</h3></div>
 <div class="hg1"><h3><span class="objectinfo">Spectral Type: </span></h3></div>
 </hgroup>
 
 
 
+
 <hgroup class="hgroup">
-<div class="hg2"><h3><span class="objectinfo">Comments: </span>Suspected Ghost</h3></div>
+<div class="hg2"><h3><span class="objectinfo">March 17, 2017, 3:43 p.m.: </span>Suspected Ghost</h3></div>
 </hgroup>
+
+
+
+
 
 
 </header>
@@ -363,7 +380,9 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 
 
 
+<script language="javascript" type="text/javascript">var recdivname = "#flot-recurrenceplot";</script>
 <script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/recurrenceplot.js"></script>
+
 <script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/mjdcalc.js"></script>
 
 
@@ -1003,7 +1022,7 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
   onmouseout='hideddrivetip();'></div></div>
 <script type="text/javascript">
 // NEED TO INPUT RA (DECIMAL HOURS) HERE 
-var options = {ra:11.379658378, de:28.3056656677, initZoom:6, zoom:9,
+var options = {ra:11.379658378, de:28.3056673935, initZoom:6, zoom:9,
   survey:"", imgSource:"DSS2", allowTopPanel:true, showTopPanel:true, showRightPanel:true,
   allowMove:false, allowZoom:false,
   showPanZoomControl:true, panZoomControlLeft:6, panZoomControlTop:10,
@@ -1026,8 +1045,8 @@ new SkyWindow2(options).attach($('#mySkyWnd')[0]);
 <!-- DR12 Navigate -->
 <div id="sdssdr12">
 <h3>SDSS DR12</h3>
-<a href="http://skyserver.sdss.org/dr12/en/tools/chart/navi.aspx?ra=170.694865222&dec=28.3056656677&scale=0.5&width=500&height=500&opt=GPS" onmouseover="document.images['s1a'].src='http://skyservice.pha.jhu.edu/DR12/ImgCutout/getjpeg.aspx?ra=170.694865222&dec=28.3056656677&scale=0.5&width=500&height=500&opt=GPSI';" onmouseout="document.images['s1a'].src='http://skyservice.pha.jhu.edu/DR12/ImgCutout/getjpeg.aspx?ra=170.694865222&dec=28.3056656677&scale=0.5&width=500&height=500&opt=GPS';">
-<img src="http://skyservice.pha.jhu.edu/DR12/ImgCutout/getjpeg.aspx?ra=170.694865222&dec=28.3056656677&scale=0.5&width=500&height=500&opt=GPS" name="s1a"  height="300" width="300"  alt="" border="0"></a>
+<a href="http://skyserver.sdss.org/dr12/en/tools/chart/navi.aspx?ra=170.694861965&dec=28.3056673935&scale=0.5&width=500&height=500&opt=GPS" onmouseover="document.images['s1a'].src='http://skyservice.pha.jhu.edu/DR12/ImgCutout/getjpeg.aspx?ra=170.694861965&dec=28.3056673935&scale=0.5&width=500&height=500&opt=GPSI';" onmouseout="document.images['s1a'].src='http://skyservice.pha.jhu.edu/DR12/ImgCutout/getjpeg.aspx?ra=170.694861965&dec=28.3056673935&scale=0.5&width=500&height=500&opt=GPS';">
+<img src="http://skyservice.pha.jhu.edu/DR12/ImgCutout/getjpeg.aspx?ra=170.694861965&dec=28.3056673935&scale=0.5&width=500&height=500&opt=GPS" name="s1a"  height="300" width="300"  alt="" border="0"></a>
 </div>
 
 
@@ -1035,18 +1054,18 @@ new SkyWindow2(options).attach($('#mySkyWnd')[0]);
 <div id="externallinks">
 <!-- WIKISKY --> <!-- NEED TO INPUT RA (DECIMAL HOURS) HERE x 2 -->
 <div class="links">
-<a href="http://www.wikisky.org/?ra=11.379658378&de=28.3056656677&zoom=13&show_grid=1&show_constellation_lines=1&show_constellation_boundaries=1&show_const_names=0&show_galaxies=1&show_box=1&box_ra=11.379658378&box_de=28.3056656677&box_width=50&box_height=50&img_source=DSS2" target="blank">WIKISKY</a>
+<a href="http://www.wikisky.org/?ra=11.379658378&de=28.3056673935&zoom=13&show_grid=1&show_constellation_lines=1&show_constellation_boundaries=1&show_const_names=0&show_galaxies=1&show_box=1&box_ra=11.379658378&box_de=28.3056673935&box_width=50&box_height=50&img_source=DSS2" target="blank">WIKISKY</a>
 </div>
 
 <!-- SDSS DR12 NAVIGATE LINK -->
 <div class="links">
-<a href="http://skyserver.sdss.org/dr12/en/tools/chart/navi.aspx?ra=170.694865222&dec=28.3056656677&scale=0.1&width=500&height=500&opt=GPS" target="blank">SDSS DR12 Navigate</a>
+<a href="http://skyserver.sdss.org/dr12/en/tools/chart/navi.aspx?ra=170.694861965&dec=28.3056673935&scale=0.1&width=500&height=500&opt=GPS" target="blank">SDSS DR12 Navigate</a>
 </div>
 
 <!--SDSS DR12 NEAREST OBJECT (EXPLORE TOOL - currently broken) -->
 <!--
 <div class="links">
-<a href="http://skyserver.sdss.org/dr12/en/tools/explore/Summary.aspx?ra=170.694865222&dec=28.3056656677" target="blank">SDSS DR12 Nearest Object</a>
+<a href="http://skyserver.sdss.org/dr12/en/tools/explore/Summary.aspx?ra=170.694861965&dec=28.3056673935" target="blank">SDSS DR12 Nearest Object</a>
 </div>
 -->
 
@@ -1054,22 +1073,22 @@ new SkyWindow2(options).attach($('#mySkyWnd')[0]);
 
 <!-- NED LINK -->
 <div class="links">
-<a href="http://nedwww.ipac.caltech.edu/cgi-bin/nph-objsearch?in_csys=Equatorial&in_equinox=J2000.0&lon=170.694865d&lat=28.305666d&radius=0.16667&hconst=73&omegam=0.27&omegav=0.73&corr_z=1&z_constraint=Unconstrained&z_value1=&z_value2=&z_unit=z&search_type=Near+Position+Search&ot_include=ANY&nmp_op=ANY&out_csys=Equatorial&out_equinox=J2000.0&obj_sort=Distance+to+search+center&of=pre_text&zv_breaker=30000.0&list_limit=5&img_stamp=YES" target="_blank">NED: 10 arcsec radius</a>
+<a href="http://nedwww.ipac.caltech.edu/cgi-bin/nph-objsearch?in_csys=Equatorial&in_equinox=J2000.0&lon=170.694862d&lat=28.305667d&radius=0.16667&hconst=73&omegam=0.27&omegav=0.73&corr_z=1&z_constraint=Unconstrained&z_value1=&z_value2=&z_unit=z&search_type=Near+Position+Search&ot_include=ANY&nmp_op=ANY&out_csys=Equatorial&out_equinox=J2000.0&obj_sort=Distance+to+search+center&of=pre_text&zv_breaker=30000.0&list_limit=5&img_stamp=YES" target="_blank">NED: 10 arcsec radius</a>
 </div>
 
 <!-- LEDA -->
 <div class="links">
-<a href="http://leda.univ-lyon1.fr/fG.cgi?n=0&c=o&p=J170.694865222d28.3056656677d&f=0.16667&ob=ra" target="blank">LEDA: 10 arcsec radius</a>
+<a href="http://leda.univ-lyon1.fr/fG.cgi?n=0&c=o&p=J170.694861965d28.3056673935d&f=0.16667&ob=ra" target="blank">LEDA: 10 arcsec radius</a>
 </div>
 
 <!-- SIMBAD -->
 <div class="links">
-<a href="http://simbad.u-strasbg.fr/simbad/sim-coo?Coord=170.694865222d28.3056656677d&Radius=10&Radius.unit=arcsec&CooFrame=FK5&CooEqui=2000&CooEpoch=2000" target="blank">SIMBAD: 10 arcsec radius</a>
+<a href="http://simbad.u-strasbg.fr/simbad/sim-coo?Coord=170.694861965d28.3056673935d&Radius=10&Radius.unit=arcsec&CooFrame=FK5&CooEqui=2000&CooEpoch=2000" target="blank">SIMBAD: 10 arcsec radius</a>
 </div>
 
 <!-- Galactic Extinction -->
 <div class="links">
-<a href="http://nedwww.ipac.caltech.edu/cgi-bin/nph-calc?in_csys=Equatorial&in_equinox=J2000.0&obs_epoch=2000.0&lon=170.694865222d&lat=28.3056656677d&pa=0.0&out_csys=Equatorial&out_equinox=J2000.0" target="blank">Galactic Extinction</a>
+<a href="http://nedwww.ipac.caltech.edu/cgi-bin/nph-calc?in_csys=Equatorial&in_equinox=J2000.0&obs_epoch=2000.0&lon=170.694861965d&lat=28.3056673935d&pa=0.0&out_csys=Equatorial&out_equinox=J2000.0" target="blank">Galactic Extinction</a>
 </div>
 </div>
 

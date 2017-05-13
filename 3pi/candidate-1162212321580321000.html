@@ -17,6 +17,14 @@ var jslimitsglobal = new Object();
 
 
 <script language="javascript" type="text/javascript">
+var jsrecurrencedataglobal = new Object();
+var jsrecurrencelabelsglobal = new Object();
+var jsrecurrencelimitsglobal = new Object();
+</script>
+
+
+
+<script language="javascript" type="text/javascript">
 var jslcdata = new Array();
 var jslabels = new Array();
 // We have an array with 4 elements. Each element is another array of n elements (usually 5).
@@ -36,11 +44,11 @@ var jslabels = new Array();
 
 // 2013-02-14 KWS Change the xmin to the FIRST value of the xmin array (which doesn't include the limit dates).
 var jslclimits = {  "xmin": 56468.3559681, 
-                   "xmax": 57883.340393,
+                   "xmax": 57886.3484364,
                    "ymin": 19.9042,
                    "ymax": 20.0858,
                    "discoveryDate": 56701.6431687,
-                   "today": 57883.340393 };
+                   "today": 57886.3484364 };
 
 jslimitsglobal["#flot-lightcurve"] = jslclimits;
 
@@ -220,11 +228,11 @@ var jsrecurrencelimits = { "xmin": -3.0,  // arcsec
                            "ymax": 3.0 };
 
 
-  jsrecurrencedata.push([[0.14113569125899308, -0.0018474116700417653], [0.1041699735476668, 0.04281730960826735], [-0.0, 0.0], [-0.02525644143622504, 0.032496026886974505]]);
+  jsrecurrencedata.push([[0.14113569125899308, -0.0018474116700417653], [0.1041699735476668, 0.04281730960826735], [-0.02525644143622504, 0.032496026886974505], [-0.0, 0.0]]);
 
   jsrecurrencedata.push([[0, 0]]);
 
-  jsrecurrencedata.push([[0.05501229926110087, 0.018366481199905138]]);
+  jsrecurrencedata.push([[0.05501229931523663, 0.018366481199905138]]);
 
 
 
@@ -234,6 +242,10 @@ var jsrecurrencelimits = { "xmin": -3.0,  // arcsec
 
   jsrecurrencelabels.push({"color": 22, "display": true, "label": "mean coords (rms = 0.07)"});
 
+
+jsrecurrencelimitsglobal["#flot-recurrenceplot"] = jsrecurrencelimits;
+jsrecurrencedataglobal["#flot-recurrenceplot"] = jsrecurrencedata;
+jsrecurrencelabelsglobal["#flot-recurrenceplot"] = jsrecurrencelabels;
 
 </script>
 
@@ -262,7 +274,7 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 <li>
 
 
-<form id="search_form" action="/ps1threepi/searchresults/" method="post"><input type='hidden' name='csrfmiddlewaretoken' value='EpZLvIahGX8speO4esXuViTzHXv3pgv4' />
+<form id="search_form" action="/ps1threepi/searchresults/" method="post"><input type='hidden' name='csrfmiddlewaretoken' value='HqquV8uvzPGpXbgPfYLglfPLagrYrniw' />
     
     <div class="fieldWrapper">
     <p>
@@ -299,6 +311,9 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 <div class="hg1"><h3><span class="objectinfo">Contextual Classification: </span>orphan</h3></div>
 <div class="hg1"><h3><span class="objectinfo">Spectral Type: </span></h3></div>
 </hgroup>
+
+
+
 
 
 
@@ -348,7 +363,9 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 
 
 
+<script language="javascript" type="text/javascript">var recdivname = "#flot-recurrenceplot";</script>
 <script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/recurrenceplot.js"></script>
+
 <script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/mjdcalc.js"></script>
 
 

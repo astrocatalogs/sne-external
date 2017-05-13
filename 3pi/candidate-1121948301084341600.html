@@ -17,6 +17,14 @@ var jslimitsglobal = new Object();
 
 
 <script language="javascript" type="text/javascript">
+var jsrecurrencedataglobal = new Object();
+var jsrecurrencelabelsglobal = new Object();
+var jsrecurrencelimitsglobal = new Object();
+</script>
+
+
+
+<script language="javascript" type="text/javascript">
 var jslcdata = new Array();
 var jslabels = new Array();
 // We have an array with 4 elements. Each element is another array of n elements (usually 5).
@@ -36,11 +44,11 @@ var jslabels = new Array();
 
 // 2013-02-14 KWS Change the xmin to the FIRST value of the xmin array (which doesn't include the limit dates).
 var jslclimits = {  "xmin": 56466.2932561, 
-                   "xmax": 57883.4074683,
+                   "xmax": 57886.4175237,
                    "ymin": 21.1141,
                    "ymax": 21.5387,
                    "discoveryDate": 57846.4629841,
-                   "today": 57883.4074683 };
+                   "today": 57886.4175237 };
 
 jslimitsglobal["#flot-lightcurve"] = jslclimits;
 
@@ -98,7 +106,7 @@ jslimitsglobal["#flot-lightcurve"] = jslclimits;
   
     jslcdata.push([[57447.5598605261, 21.470619284438357], [57447.5717728748, 21.185793284438358], [57447.5836100039, 21.196087284438363], [57447.5952664829, 21.401864984438358]]);
   
-    jslcdata.push([[57379.5946097328, 20.462741284438362], [57379.5952525525, 20.39631728443836], [57379.6070492264, 20.034831284438358], [57379.6076943915, 20.321456284438362], [57379.6195001537, 20.699801284438358], [57379.6201517102, 20.585120284438357], [57379.6319568367, 20.902161284438357], [57379.6326314328, 21.08915128443836], [57529.3522835118, 20.91077828443836], [57529.3634546109, 20.80576428443836], [57529.3746767928, 20.24003528443836], [57529.3859550366, 20.249880684438356]]);
+    jslcdata.push([[57379.5946097328, 20.462741284438362], [57379.5952525525, 20.39631728443836], [57379.6070492264, 20.034831284438358], [57379.6076943915, 20.321456284438362], [57379.6195001537, 20.699801284438358], [57379.6201517102, 20.585120284438357], [57379.6319568367, 20.902161284438357], [57379.6326314328, 21.08915128443836], [57529.3522835118, 20.91077828443836], [57529.3634546109, 20.80576428443836], [57529.3746767928, 20.24003528443836], [57529.3859550366, 20.249880684438356], [57884.3637890574, 20.11828928443836], [57884.3743640888, 20.36216428443836], [57884.3848666693, 19.63138928443836], [57884.4208410368, 19.704364284438356]]);
   
     jslcdata.push([[56466.2932560927, 19.897865125959108], [56662.6467477521, 20.47015412595911], [57243.2511112886, 18.578011136799155], [57244.2533349987, 19.88361613679916], [57557.2671038448, 18.48147313679916]]);
   
@@ -235,6 +243,10 @@ var jsrecurrencelimits = { "xmin": -3.0,  // arcsec
   jsrecurrencelabels.push({"color": 22, "display": true, "label": "mean coords (rms = 0.10)"});
 
 
+jsrecurrencelimitsglobal["#flot-recurrenceplot"] = jsrecurrencelimits;
+jsrecurrencedataglobal["#flot-recurrenceplot"] = jsrecurrencedata;
+jsrecurrencelabelsglobal["#flot-recurrenceplot"] = jsrecurrencelabels;
+
 </script>
 
 
@@ -262,7 +274,7 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 <li>
 
 
-<form id="search_form" action="/ps1threepi/searchresults/" method="post"><input type='hidden' name='csrfmiddlewaretoken' value='s6Zo96ubPkaHwnJtSw9Y4fV89QgEVS2T' />
+<form id="search_form" action="/ps1threepi/searchresults/" method="post"><input type='hidden' name='csrfmiddlewaretoken' value='7fSq11pJ32ZQKRlSjq9hHzZGLRzKmjlB' />
     
     <div class="fieldWrapper">
     <p>
@@ -314,6 +326,9 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 
 
 
+
+
+
 </header>
 
 
@@ -359,7 +374,9 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 
 
 
+<script language="javascript" type="text/javascript">var recdivname = "#flot-recurrenceplot";</script>
 <script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/recurrenceplot.js"></script>
+
 <script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/mjdcalc.js"></script>
 
 

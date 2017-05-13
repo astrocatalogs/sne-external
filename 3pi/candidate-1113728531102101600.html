@@ -17,6 +17,14 @@ var jslimitsglobal = new Object();
 
 
 <script language="javascript" type="text/javascript">
+var jsrecurrencedataglobal = new Object();
+var jsrecurrencelabelsglobal = new Object();
+var jsrecurrencelimitsglobal = new Object();
+</script>
+
+
+
+<script language="javascript" type="text/javascript">
 var jslcdata = new Array();
 var jslabels = new Array();
 // We have an array with 4 elements. Each element is another array of n elements (usually 5).
@@ -36,11 +44,11 @@ var jslabels = new Array();
 
 // 2013-02-14 KWS Change the xmin to the FIRST value of the xmin array (which doesn't include the limit dates).
 var jslclimits = {  "xmin": 56447.2892868, 
-                   "xmax": 57883.3773475,
+                   "xmax": 57886.3858208,
                    "ymin": 19.4816,
                    "ymax": 20.6399,
                    "discoveryDate": 57437.4079015,
-                   "today": 57883.3773475 };
+                   "today": 57886.3858208 };
 
 jslimitsglobal["#flot-lightcurve"] = jslclimits;
 
@@ -98,7 +106,7 @@ jslimitsglobal["#flot-lightcurve"] = jslclimits;
   
     jslcdata.push([[56736.4787203149, 20.915609978319907], [56736.4900487284, 21.029539978319903], [56736.5016999897, 20.932719978319906], [56736.5134879056, 21.299969978319908]]);
   
-    jslcdata.push([[57500.3571580141, 20.808491284438357], [57500.3699823973, 20.67853728443836], [57500.3826426631, 20.64293528443836], [57500.3953049089, 20.65975028443836], [57528.3184318729, 20.78426428443836], [57528.329610235, 20.87870328443836], [57528.3408038812, 19.848140284438358], [57528.3520322045, 20.464454284438357], [57531.2839361158, 20.06342328443836], [57531.2955020323, 19.89661828443836], [57531.307101245, 20.144409284438357], [57531.318715957, 20.565500284438357], [57800.5403048912, 20.90237828443836], [57800.5530682915, 20.862965284438356], [57800.5657440849, 20.94819928443836], [57800.5784682669, 20.703062284438356]]);
+    jslcdata.push([[57500.3571580141, 20.808491284438357], [57500.3699823973, 20.67853728443836], [57500.3826426631, 20.64293528443836], [57500.3953049089, 20.65975028443836], [57528.3184318729, 20.78426428443836], [57528.329610235, 20.87870328443836], [57528.3408038812, 19.848140284438358], [57528.3520322045, 20.464454284438357], [57531.2839361158, 20.06342328443836], [57531.2955020323, 19.89661828443836], [57531.307101245, 20.144409284438357], [57531.318715957, 20.565500284438357], [57800.5403048912, 20.90237828443836], [57800.5530682915, 20.862965284438356], [57800.5657440849, 20.94819928443836], [57800.5784682669, 20.703062284438356], [57882.3172816695, 19.721647284438355], [57882.328824219, 19.925001284438355], [57882.3403805742, 20.24973928443836], [57882.3519685314, 19.965146284438358]]);
   
     jslcdata.push([[56447.2892867578, 20.915210525959107], [56662.6373245927, 20.62434412595911], [57221.2633113674, 19.03099113679916], [57396.6664284674, 20.545628936799158]]);
   
@@ -235,6 +243,10 @@ var jsrecurrencelimits = { "xmin": -3.0,  // arcsec
   jsrecurrencelabels.push({"color": 22, "display": true, "label": "mean coords (rms = 0.08)"});
 
 
+jsrecurrencelimitsglobal["#flot-recurrenceplot"] = jsrecurrencelimits;
+jsrecurrencedataglobal["#flot-recurrenceplot"] = jsrecurrencedata;
+jsrecurrencelabelsglobal["#flot-recurrenceplot"] = jsrecurrencelabels;
+
 </script>
 
 
@@ -262,7 +274,7 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 <li>
 
 
-<form id="search_form" action="/ps1threepi/searchresults/" method="post"><input type='hidden' name='csrfmiddlewaretoken' value='GOz5cISdLTVq0vI8I33LpH2RPVAhC5Pm' />
+<form id="search_form" action="/ps1threepi/searchresults/" method="post"><input type='hidden' name='csrfmiddlewaretoken' value='OxLSi8qe8VzUBCo0YKCNbQsLe2DxSJJB' />
     
     <div class="fieldWrapper">
     <p>
@@ -314,6 +326,9 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 
 
 
+
+
+
 </header>
 
 
@@ -359,7 +374,9 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 
 
 
+<script language="javascript" type="text/javascript">var recdivname = "#flot-recurrenceplot";</script>
 <script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/recurrenceplot.js"></script>
+
 <script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/mjdcalc.js"></script>
 
 

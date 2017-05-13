@@ -17,6 +17,14 @@ var jslimitsglobal = new Object();
 
 
 <script language="javascript" type="text/javascript">
+var jsrecurrencedataglobal = new Object();
+var jsrecurrencelabelsglobal = new Object();
+var jsrecurrencelimitsglobal = new Object();
+</script>
+
+
+
+<script language="javascript" type="text/javascript">
 var jslcdata = new Array();
 var jslabels = new Array();
 // We have an array with 4 elements. Each element is another array of n elements (usually 5).
@@ -36,11 +44,11 @@ var jslabels = new Array();
 
 // 2013-02-14 KWS Change the xmin to the FIRST value of the xmin array (which doesn't include the limit dates).
 var jslclimits = {  "xmin": 56447.2798799, 
-                   "xmax": 57883.3770092,
+                   "xmax": 57886.3854734,
                    "ymin": 20.4478,
                    "ymax": 21.2771,
                    "discoveryDate": 57429.3872941,
-                   "today": 57883.3770092 };
+                   "today": 57886.3854734 };
 
 jslimitsglobal["#flot-lightcurve"] = jslclimits;
 
@@ -98,7 +106,7 @@ jslimitsglobal["#flot-lightcurve"] = jslclimits;
   
     jslcdata.push([[56681.5675369059, 20.922649978319907], [56681.5785330325, 20.928614178319904], [57406.4434375991, 21.61842128443836], [57406.4550078367, 21.12256528443836], [57406.4666550364, 20.56014128443836], [57406.4784833064, 20.913961284438358], [57437.4220560491, 20.55700328443836], [57437.4469374768, 20.59111828443836]]);
   
-    jslcdata.push([[56668.5395812854, 20.822669284438355], [56668.5524001346, 21.16228228443836], [57408.5964524853, 20.29062128443836], [57408.6083355445, 20.37226128443836], [57408.6201928188, 20.15902128443836], [57528.3120000762, 20.55857928443836], [57528.3231847137, 20.51694028443836], [57528.3343726251, 20.665045284438357], [57528.3455859711, 19.65884728443836], [57531.2732503248, 20.15702128443836], [57531.2858706416, 19.92039128443836], [57531.2974458655, 20.173251284438358], [57531.3090325007, 20.55055128443836], [57531.3206491306, 19.98680128443836], [57831.4296112958, 21.653209384438362], [57831.4419233583, 20.991008284438358], [57831.4542424566, 20.99878828443836], [57831.4665603481, 20.56291028443836]]);
+    jslcdata.push([[56668.5395812854, 20.822669284438355], [56668.5524001346, 21.16228228443836], [57408.5964524853, 20.29062128443836], [57408.6083355445, 20.37226128443836], [57408.6201928188, 20.15902128443836], [57528.3120000762, 20.55857928443836], [57528.3231847137, 20.51694028443836], [57528.3343726251, 20.665045284438357], [57528.3455859711, 19.65884728443836], [57531.2732503248, 20.15702128443836], [57531.2858706416, 19.92039128443836], [57531.2974458655, 20.173251284438358], [57531.3090325007, 20.55055128443836], [57531.3206491306, 19.98680128443836], [57831.4296112958, 21.653209384438362], [57831.4419233583, 20.991008284438358], [57831.4542424566, 20.99878828443836], [57831.4665603481, 20.56291028443836], [57882.3125499404, 20.103920284438363], [57882.324103862, 19.90932828443836], [57882.3356325845, 20.390054284438357], [57882.3472139961, 20.303790284438357]]);
   
     jslcdata.push([[56447.2798799407, 20.75613252595911], [56641.6498808338, 20.13538262595911], [56659.6562157413, 20.59728812595911], [57035.667952335, 20.82392213679916], [57036.6728604119, 20.450975796799153], [57037.6652964209, 20.675653736799156], [57395.6658113505, 20.690614736799155], [57396.661322365, 20.636931236799157]]);
   
@@ -235,6 +243,10 @@ var jsrecurrencelimits = { "xmin": -3.0,  // arcsec
   jsrecurrencelabels.push({"color": 22, "display": true, "label": "mean coords (rms = 0.09)"});
 
 
+jsrecurrencelimitsglobal["#flot-recurrenceplot"] = jsrecurrencelimits;
+jsrecurrencedataglobal["#flot-recurrenceplot"] = jsrecurrencedata;
+jsrecurrencelabelsglobal["#flot-recurrenceplot"] = jsrecurrencelabels;
+
 </script>
 
 
@@ -262,7 +274,7 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 <li>
 
 
-<form id="search_form" action="/ps1threepi/searchresults/" method="post"><input type='hidden' name='csrfmiddlewaretoken' value='AApk2SJQfYlX4QoUFCDTGjysTpzrfyly' />
+<form id="search_form" action="/ps1threepi/searchresults/" method="post"><input type='hidden' name='csrfmiddlewaretoken' value='NAlHFb5XDUHIUrsKOgVuLcFOEuIQNDSS' />
     
     <div class="fieldWrapper">
     <p>
@@ -314,6 +326,9 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 
 
 
+
+
+
 </header>
 
 
@@ -359,7 +374,9 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 
 
 
+<script language="javascript" type="text/javascript">var recdivname = "#flot-recurrenceplot";</script>
 <script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/recurrenceplot.js"></script>
+
 <script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/mjdcalc.js"></script>
 
 

@@ -17,6 +17,14 @@ var jslimitsglobal = new Object();
 
 
 <script language="javascript" type="text/javascript">
+var jsrecurrencedataglobal = new Object();
+var jsrecurrencelabelsglobal = new Object();
+var jsrecurrencelimitsglobal = new Object();
+</script>
+
+
+
+<script language="javascript" type="text/javascript">
 var jslcdata = new Array();
 var jslabels = new Array();
 // We have an array with 4 elements. Each element is another array of n elements (usually 5).
@@ -36,11 +44,11 @@ var jslabels = new Array();
 
 // 2013-02-14 KWS Change the xmin to the FIRST value of the xmin array (which doesn't include the limit dates).
 var jslclimits = {  "xmin": 56467.4949614, 
-                   "xmax": 57883.357873,
+                   "xmax": 57886.3671329,
                    "ymin": 18.7753,
                    "ymax": 19.3967,
                    "discoveryDate": 57209.5352236,
-                   "today": 57883.357873 };
+                   "today": 57886.3671329 };
 
 jslimitsglobal["#flot-lightcurve"] = jslclimits;
 
@@ -98,7 +106,7 @@ jslimitsglobal["#flot-lightcurve"] = jslclimits;
   
     jslcdata.push([[56475.4788091892, 21.685580978319905], [56475.4891255833, 21.459693778319906], [56506.367523067, 21.718771278319906], [56506.3681265693, 21.311059978319907], [56506.3778296892, 21.684760978319908], [56506.3784277643, 21.310149978319906], [56551.2600698733, 20.01259997831991], [56558.2877051435, 20.641188978319907], [56558.2901514117, 20.146199978319906], [57507.5294496644, 20.48195128443836], [57507.5433031749, 20.43560128443836], [57507.5571737513, 20.34697128443836], [57507.570882176, 20.08613128443836]]);
   
-    jslcdata.push([[56467.494961381, 19.55942128443836], [56467.506302779, 20.780995284438358], [56494.3967992389, 19.829450284438355], [56494.3974682726, 19.67113128443836], [56494.4080832907, 20.268628284438357], [56494.4087450596, 19.79083128443836], [56557.3091562977, 20.70958428443836], [56557.3211282854, 21.27192828443836], [57589.4998263712, 20.19301528443836], [57589.5102164307, 20.163545284438356], [57589.520580038, 19.99348228443836], [57589.5309399059, 19.95804428443836], [57617.4215391226, 21.198471684438356], [57617.4346009657, 21.02273628443836], [57617.4476182918, 21.130496284438358], [57617.4606169929, 21.006824284438355], [57672.2532245959, 20.39448128443836], [57672.2538688402, 20.34865128443836], [57672.2680305514, 20.69081128443836], [57672.282184136, 20.50891128443836], [57672.2963353205, 20.29795128443836]]);
+    jslcdata.push([[56467.494961381, 19.55942128443836], [56467.506302779, 20.780995284438358], [56494.3967992389, 19.829450284438355], [56494.3974682726, 19.67113128443836], [56494.4080832907, 20.268628284438357], [56494.4087450596, 19.79083128443836], [56557.3091562977, 20.70958428443836], [56557.3211282854, 21.27192828443836], [57589.4998263712, 20.19301528443836], [57589.5102164307, 20.163545284438356], [57589.520580038, 19.99348228443836], [57589.5309399059, 19.95804428443836], [57617.4215391226, 21.198471684438356], [57617.4346009657, 21.02273628443836], [57617.4476182918, 21.130496284438358], [57617.4606169929, 21.006824284438355], [57672.2532245959, 20.39448128443836], [57672.2538688402, 20.34865128443836], [57672.2680305514, 20.69081128443836], [57672.282184136, 20.50891128443836], [57672.2963353205, 20.29795128443836], [57883.5616569155, 19.16544028443836], [57883.569732849, 19.504240184438355], [57883.577848888, 19.333168284438358], [57883.5858954806, 18.346526284438358]]);
   
     jslcdata.push([[56526.4076694054, 20.28280882595911], [56994.1961314016, 19.45418413679916], [56994.2032496143, 20.062999436799156], [57183.6111123277, 20.206200036799157], [57184.6066969893, 20.514550236799153], [57505.6154531813, 20.075369136799157], [57505.6239181865, 19.709363136799155], [57506.6162018916, 19.310908136799156]]);
   
@@ -235,6 +243,10 @@ var jsrecurrencelimits = { "xmin": -3.0,  // arcsec
   jsrecurrencelabels.push({"color": 22, "display": true, "label": "mean coords (rms = 0.07)"});
 
 
+jsrecurrencelimitsglobal["#flot-recurrenceplot"] = jsrecurrencelimits;
+jsrecurrencedataglobal["#flot-recurrenceplot"] = jsrecurrencedata;
+jsrecurrencelabelsglobal["#flot-recurrenceplot"] = jsrecurrencelabels;
+
 </script>
 
 
@@ -262,7 +274,7 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 <li>
 
 
-<form id="search_form" action="/ps1threepi/searchresults/" method="post"><input type='hidden' name='csrfmiddlewaretoken' value='FEpWKyaAJ4A7SplI0cACJIDSDHjC2QRV' />
+<form id="search_form" action="/ps1threepi/searchresults/" method="post"><input type='hidden' name='csrfmiddlewaretoken' value='ZSDv5tYOs9EZayVFH8Ozjah5zbaBbKTT' />
     
     <div class="fieldWrapper">
     <p>
@@ -299,6 +311,9 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 <div class="hg1"><h3><span class="objectinfo">Contextual Classification: </span>sn</h3></div>
 <div class="hg1"><h3><span class="objectinfo">Spectral Type: </span></h3></div>
 </hgroup>
+
+
+
 
 
 
@@ -348,7 +363,9 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 
 
 
+<script language="javascript" type="text/javascript">var recdivname = "#flot-recurrenceplot";</script>
 <script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/recurrenceplot.js"></script>
+
 <script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/mjdcalc.js"></script>
 
 
