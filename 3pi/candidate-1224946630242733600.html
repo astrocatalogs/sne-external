@@ -1,0 +1,932 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="/ps1threepi/site_media/css/main.css" type="text/css"/>
+
+<title>Candidate 1224946630242733600</title>
+
+
+
+<script language="javascript" type="text/javascript">
+var jslcdataglobal = new Object();
+var jslabelsglobal = new Object();
+var jslimitsglobal = new Object();
+</script>
+
+
+
+<script language="javascript" type="text/javascript">
+var jsrecurrencedataglobal = new Object();
+var jsrecurrencelabelsglobal = new Object();
+var jsrecurrencelimitsglobal = new Object();
+</script>
+
+
+
+<script language="javascript" type="text/javascript">
+var jslcdata = new Array();
+var jslabels = new Array();
+// We have an array with 4 elements. Each element is another array of n elements (usually 5).
+// They must all be the same size - the length of which is captured in the jslabels array.
+// 1. Data points
+// 2. Blanks
+// 3. Nondetections
+// 4. Data labels
+
+// 2013-01-14 KWS Add max/min limits.  The last value in the (e.g.) xmin array is the min for the whole array.
+//                Likewise for the other limits.  Note that we had to add x2min and x2max here into the
+//                javascript array, because for some reason Flot doesn't allow calculations within its axis
+//                element specifiers.
+
+// 2012-01-16 KWS Moved graphing specific max/min limits (e.g. padding, x2min and x2max) into the lightcurve
+//                javascript code to restrict the HTML code to just presenting the required data values.
+
+// 2013-02-14 KWS Change the xmin to the FIRST value of the xmin array (which doesn't include the limit dates).
+var jslclimits = {  "xmin": 56459.608812, 
+                   "xmax": 57951.408223,
+                   "ymin": 21.7288,
+                   "ymax": 21.9216,
+                   "discoveryDate": 57928.5669144,
+                   "today": 57951.408223 };
+
+jslimitsglobal["#flot-lightcurve"] = jslclimits;
+
+
+// The first data items are detection data, non-detections, blanks (and anything else)
+
+  // Normally we have 5 filters, but in case we have more, slice all but the last element
+  // (which is the combined data for all filters).
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([[57928.5669144229, 21.7288, 0.174115], [57928.5875280666, 21.9216, 0.189673], [57928.5875280666, 21.8825, 0.190615]]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+
+  // Normally we have 5 filters, but in case we have more, slice all but the last element
+  // (which is the combined data for all filters).
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+
+  // Normally we have 5 filters, but in case we have more, slice all but the last element
+  // (which is the combined data for all filters).
+  
+    jslcdata.push([[56533.4110436612, 20.831474138948966], [56533.4110436612, 20.846547138948964], [56533.4218414215, 21.511240938948966], [56533.4218414215, 21.47856813894897], [56544.3986600963, 21.087237138948964], [56544.3986600963, 20.896031138948967], [56544.4043624183, 21.417498138948968], [56544.4056308128, 21.26525613894897], [56544.4056308129, 21.505172138948968], [56544.411346049, 21.151301138948966], [56629.212809414, 20.776431138948965], [56629.212809414, 21.026003138948965], [56629.2231848891, 21.194049338948965], [56629.2231848891, 20.98514113894897]]);
+  
+    jslcdata.push([[56533.4327384448, 21.459853978319906], [56533.4327384448, 21.556730478319906], [56533.4429654488, 21.445049978319908], [56533.4429654488, 21.544073178319906], [56588.2670700685, 20.770932978319905], [56588.2670700685, 20.475751978319906], [56588.267675446, 20.936528078319906], [56588.2773121848, 20.710147978319906], [56588.2773121848, 20.582904978319906], [56588.2779101749, 20.975001978319906], [57242.4611375478, 20.384229284438362], [57242.4611375478, 20.54742728443836], [57242.4713009313, 20.23495028443836], [57242.4713761628, 20.414141284438358], [57242.4819803508, 20.17961928443836], [57242.4819803508, 20.24623428443836], [57242.492377901, 20.34031628443836], [57242.492377901, 20.317602284438358]]);
+  
+    jslcdata.push([[56528.4500696133, 21.058350384438356], [56528.4500696133, 21.12558928443836], [56528.4612754076, 21.220968684438354], [56528.4612754076, 21.137993184438358], [56557.3779334334, 20.516825284438358], [56557.3779334334, 20.28498728443836], [56557.3792503638, 20.39061328443836], [56557.3894205689, 20.334011284438358], [56557.3894205689, 20.19483928443836], [56557.3907405315, 20.765525284438358], [57241.5336872713, 20.87056728443836], [57241.5336872713, 20.85922008443836], [57241.5442432991, 20.831648284438362], [57241.5442432991, 20.83132728443836], [57241.5548799117, 20.68746078443836], [57241.5548799117, 20.67786098443836], [57241.5654658821, 20.686197284438357], [57241.5654658821, 20.637825684438358], [57650.3465523403, 20.61676828443836], [57650.3465523403, 20.77882728443836], [57650.3584215526, 20.254220184438356], [57650.3584215526, 20.21095428443836], [57650.3703256617, 20.26839628443836], [57650.3703256617, 20.355380284438358], [57650.3822868215, 20.58467228443836], [57650.3822868215, 20.58980228443836], [57678.287582546, 19.11811228443836], [57678.287582546, 19.04323128443836], [57678.2985598504, 20.519501284438356], [57678.2985598504, 20.200081284438358], [57678.309532356, 19.79471128443836], [57678.309532356, 20.23900228443836], [57678.3205448313, 20.31033428443836], [57678.3205448313, 20.166861284438358], [57680.2947577122, 21.09524828443836], [57680.2947577122, 20.99799228443836], [57680.3050653925, 21.03745428443836], [57680.3050653925, 20.90334928443836], [57680.3153518824, 20.92354028443836], [57680.3153518824, 20.79856028443836], [57680.3256459534, 20.83239288443836], [57680.3256459534, 20.73636808443836]]);
+  
+    jslcdata.push([[56459.6088120002, 20.63610912595911], [56474.5943648489, 19.513151136799156], [56613.2332702037, 20.341037125959108], [57212.6117289069, 20.193571636799156], [57212.6117718964, 20.24987123679916], [57215.6220013005, 19.622648136799157], [57215.6220013005, 19.60111143679916]]);
+  
+    jslcdata.push([[56465.6168345763, 19.26600496747986], [56465.6179001471, 19.11221596747986], [56465.6179001471, 19.258453167479857], [56613.21600259, 19.14500276747986], [56613.21600259, 19.18393296747986], [57543.6192907873, 18.181640136799157], [57543.6192907873, 18.068647136799157], [57689.1993426959, 17.79715213679916], [57689.1993426959, 17.83372213679916]]);
+  
+    jslcdata.push([[57229.50581887, 22.14689638443836], [57229.5058260349, 22.18466528443836], [57229.5161069938, 22.15947928443836], [57229.5161499833, 22.13286308443836], [57229.5264328965, 22.05984128443836], [57229.5264328965, 22.13443728443836], [57229.5367321465, 22.14719238443836], [57229.5367321465, 22.067237584438356], [57230.5510810566, 22.15796128443836], [57230.5510810566, 22.20143428443836], [57230.5616359222, 22.333204284438356], [57230.5616359222, 22.349067284438355], [57230.5721254103, 22.018469284438357], [57230.5721755646, 22.018999284438358], [57230.5826686362, 21.996498284438356], [57230.5826686362, 22.00169128443836], [57310.2666298635, 21.722632784438357], [57310.2666298636, 21.708545584438358], [57310.2772200429, 21.694302284438358], [57310.2772200429, 21.700187284438357], [57310.2877771808, 21.966831784438355], [57310.2877771808, 21.896611484438356], [57310.2983575743, 21.89147468443836], [57310.2983575743, 21.941375284438358], [57602.4746610011, 21.668057284438362], [57602.4746610011, 21.62907328443836], [57602.4865418278, 21.87910828443836], [57602.4865418278, 21.90516308443836], [57602.4983964878, 22.065836284438358], [57602.4983964878, 22.032341684438357], [57602.5102725155, 22.195247484438358], [57602.5102725155, 22.205331584438362], [57606.4972234596, 21.631804284438356], [57606.5068813395, 21.419788284438358], [57606.5165419149, 21.65064928443836], [57606.5261885378, 21.26704228443836], [57611.4613265348, 21.82025928443836], [57611.4620969119, 21.95663528443836], [57611.4620969119, 21.92082428443836], [57611.4727559578, 21.30738728443836], [57611.4735269573, 21.81505828443836], [57611.4735269573, 21.72285128443836], [57611.484213374, 21.44265728443836], [57611.4849758571, 21.59720128443836], [57611.4849758571, 21.923860284438362], [57611.4956368183, 20.961125284438356], [57611.4963970505, 21.133171284438358], [57611.4963970505, 21.389628284438356], [57627.412933468, 21.26738928443836], [57627.412933468, 21.20284328443836], [57627.4252011905, 21.405517284438357], [57627.4252011905, 21.47705328443836], [57627.4374891171, 21.607130184438358], [57627.4374891171, 21.58037428443836], [57627.449759122, 21.46048498443836], [57627.449759122, 21.53608668443836], [57630.4153465712, 21.661211284438362], [57630.4249938513, 21.589410284438358], [57630.4346633385, 21.635314284438362], [57630.444308789, 21.79700428443836], [57661.3770471205, 20.932768284438357], [57661.3770471205, 21.002391284438357], [57661.3886547596, 20.99694528443836], [57661.3886547596, 21.01790328443836], [57661.4002637682, 20.25827228443836], [57661.4002637682, 20.42871728443836], [57661.4118538609, 20.75056928443836], [57661.4118538609, 20.78193628443836], [57667.3221783508, 21.48928728443836], [57667.3221783508, 21.451205284438355], [57667.3318438908, 21.262582284438356], [57667.3318438908, 21.323332284438358], [57667.3414964121, 21.28302428443836], [57667.3414964121, 21.31529328443836], [57667.3511368934, 21.580285284438357], [57667.3511368934, 21.49857628443836], [57928.5566111106, 21.99331518443836], [57928.5566111106, 21.965086884438357], [57928.5669144229, 22.04010428443836], [57928.5772243869, 21.803193784438356], [57928.5772243869, 21.77399428443836]]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+    jslcdata.push([]);
+  
+
+  // Normally we have 5 filters, but in case we have more, slice all but the last element
+  // (which is the combined data for all filters).
+  
+
+  // Normally we have 5 filters, but in case we have more, slice all but the last element
+  // (which is the combined data for all filters).
+  
+
+
+jslcdataglobal["#flot-lightcurve"] = jslcdata;
+
+// The last item is the data labels. The length of this array must be the same as the
+// length of the filterdata (minus the last element).
+
+  jslabels.push({"color": 0, "display": true, "label": "g"});
+
+  jslabels.push({"color": 1, "display": true, "label": "r"});
+
+  jslabels.push({"color": 2, "display": true, "label": "i"});
+
+  jslabels.push({"color": 3, "display": true, "label": "z"});
+
+  jslabels.push({"color": 4, "display": true, "label": "y"});
+
+  jslabels.push({"color": 5, "display": true, "label": "w"});
+
+  jslabels.push({"color": 6, "display": false, "label": "x"});
+
+  jslabels.push({"color": 7, "display": false, "label": "B"});
+
+  jslabels.push({"color": 8, "display": false, "label": "V"});
+
+  jslabels.push({"color": 0, "display": false, "label": "g blanks"});
+
+  jslabels.push({"color": 1, "display": false, "label": "r blanks"});
+
+  jslabels.push({"color": 2, "display": false, "label": "i blanks"});
+
+  jslabels.push({"color": 3, "display": false, "label": "z blanks"});
+
+  jslabels.push({"color": 4, "display": false, "label": "y blanks"});
+
+  jslabels.push({"color": 5, "display": false, "label": "w blanks"});
+
+  jslabels.push({"color": 6, "display": false, "label": "x blanks"});
+
+  jslabels.push({"color": 7, "display": false, "label": "B blanks"});
+
+  jslabels.push({"color": 8, "display": false, "label": "V blanks"});
+
+  jslabels.push({"color": 0, "display": false, "label": "g non det"});
+
+  jslabels.push({"color": 1, "display": false, "label": "r non det"});
+
+  jslabels.push({"color": 2, "display": false, "label": "i non det"});
+
+  jslabels.push({"color": 3, "display": false, "label": "z non det"});
+
+  jslabels.push({"color": 4, "display": false, "label": "y non det"});
+
+  jslabels.push({"color": 5, "display": false, "label": "w non det"});
+
+  jslabels.push({"color": 6, "display": false, "label": "x non det"});
+
+  jslabels.push({"color": 7, "display": false, "label": "B non det"});
+
+  jslabels.push({"color": 8, "display": false, "label": "V non det"});
+
+
+jslabelsglobal["#flot-lightcurve"] = jslabels;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<script language="javascript" type="text/javascript">
+var jscolourdataglobal = new Object();
+var jscolourlabelsglobal = new Object();
+var jscolourlimitsglobal = new Object();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<script language="javascript" type="text/javascript">
+var jsrecurrencedata = new Array();
+var jsrecurrencelabels = new Array();
+var jsrecurrencelimits = { "xmin": -3.0,  // arcsec
+                           "xmax": 3.0,
+                           "ymin": -3.0,
+                           "ymax": 3.0 };
+
+
+  jsrecurrencedata.push([[-0.016775746162648486, -0.02378586660114479], [-0.0, 0.0], [-0.11200366161247555, -0.06671994629101619]]);
+
+  jsrecurrencedata.push([[0, 0]]);
+
+  jsrecurrencedata.push([[-0.042926463409724745, -0.030168604280333966]]);
+
+
+
+  jsrecurrencelabels.push({"color": 20, "display": false, "label": "Recurrences"});
+
+  jsrecurrencelabels.push({"color": 21, "display": true, "label": "1st detection"});
+
+  jsrecurrencelabels.push({"color": 22, "display": true, "label": "mean coords (rms = 0.06)"});
+
+
+jsrecurrencelimitsglobal["#flot-recurrenceplot"] = jsrecurrencelimits;
+jsrecurrencedataglobal["#flot-recurrenceplot"] = jsrecurrencedata;
+jsrecurrencelabelsglobal["#flot-recurrenceplot"] = jsrecurrencelabels;
+
+</script>
+
+
+</head>
+
+
+<body onload="TimerThread()">
+
+<script type="text/javascript">
+// 2012-12-07 KWS Added DR9 equivalents
+var a = new Image(); a.src = 'http://skyserver.sdss3.org/dr9/en/tools/chart/navi.asp?ra=342.44427899&dec=-24.4593526407&scale=0.1&width=500&height=500&opt=GPS';
+var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpeg.aspx?ra=342.44427899&dec=-24.4593526407&scale=0.1&width=500&height=500&opt=GPS';
+</script>
+
+
+<div id="candidatepage">
+<nav id="navigation">
+<ul>
+
+<li><a HREF="../../">home</a></li>
+<li><a HREF="../../public/">object list</a></li>
+<li><a HREF="../../public_quickview/">object quickview list</a></li>
+
+
+<li>
+
+
+<form id="search_form" action="/ps1threepi/searchresults/" method="post"><input type='hidden' name='csrfmiddlewaretoken' value='ZFU0Q8BYqXG8bEHe6zlcY12liKBlAKBf' />
+    
+    <div class="fieldWrapper">
+    <p>
+        
+        <input id="id_searchText" name="searchText" size="20" type="text" />
+    <input type="submit" value="Find Object" name="find_object" /></p>
+    </div>
+</form>
+</li>
+
+</ul>
+</nav>
+
+
+<section id="candidateinfo">
+<article id="candidatebody">
+<header id="candidateheader">
+<hgroup>
+<h1>
+
+  PS17dse
+
+</h1>
+<h2>&nbsp;</h2>
+<h2>22:49:46.62 -24:27:33.6</h2>
+
+<h2>&nbsp;</h2>
+<h3><span class="objectinfo">See also: </span>
+
+     
+        
+          <a href="http://wis-tns.weizmann.ac.il/object/2017fjo">AT2017fjo</a>
+        
+     
+
+</h3>
+
+</hgroup>
+</header>
+<header id="candidatemeta">
+
+<hgroup class="hgroup">
+<div class="hg1"><h3><span class="objectinfo">Flag Date: </span>June 25, 2017</h3></div>
+<div class="hg1"><h3><span class="objectinfo">Number of Detections: </span>3</h3></div>
+<div class="hg1"><h3><span class="objectinfo">Contextual Classification: </span>sn</h3></div>
+<div class="hg1"><h3><span class="objectinfo">Spectral Type: </span></h3></div>
+</hgroup>
+
+
+
+
+
+
+
+</header>
+
+
+<!-- lightcurve and recurrence plot -->
+<!-- 2012-12-17 KWS Had to specify images sizes below in PIXELS not percentages, otherwise Firefox doesn't render correctly. -->
+<div id="mainplots">
+    <div id="lightcurveandmjdticker">
+        <div id="flot-lightcurve"></div>
+        <div id="mjdticker"><form name="Boxes" onsubmit="0"> Current MJD (vertical line): <input id="mjdtickerform" name="row2d" value="wait ..."></form></div>
+    </div>
+    <div id="recurrenceandlocaitonmap">
+        <div id="flot-recurrenceplot"></div>
+        <div id="locationmap"><center><a href="/ps1threepi/site_media/images/location_maps/1224946630242733600_np.png"><img src="/ps1threepi/site_media/images/location_maps/1224946630242733600_np.png" height="239"  border="0" /></a></center></div>
+    </div>
+</div>
+
+
+
+
+<!-- The following condition is a kludge. Will fix with a sent flag in future. -->
+
+
+
+
+
+
+
+
+<script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/flot/jquery-1.7.2.js"></script>
+<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/flot/excanvas.js"></script><![endif]-->
+<script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/flot/jquery.flot.js"></script>
+<script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/flot/jquery.flot.errorbars.js"></script>
+<script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/flot/jquery.flot.axislabels.js"></script>
+<script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/flot/jquery.flot.selection.js"></script>
+<script language="javascript" type="text/javascript">var lcdivname = "#flot-lightcurve";</script>
+<script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/lightcurve.js"></script>
+
+
+
+
+
+
+
+
+
+<script language="javascript" type="text/javascript">var recdivname = "#flot-recurrenceplot";</script>
+<script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/recurrenceplot.js"></script>
+
+<script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/mjdcalc.js"></script>
+
+
+
+
+
+
+
+
+<div id="crossmatches">
+<h2>Possible Associations</h2>
+<table class="generictable">
+  <tr>
+  <th>Catalogue</th>
+  <th>ID</th>
+  <th>Separation</th>
+  <th>z</th>
+  <th>Distance (Mpc)</th>
+  <th>(m-M)</th>
+  <th>Distance Scale (Kpc/arcsec)</th>
+  </tr>
+  
+
+  <tr>
+  <td>NASA Extragalactic Database</td>
+  <td>2dFGRS S068Z279</td>
+  <td>2.31"</td>
+  <td>0.192</td>
+  <td>933.73</td>
+  <td>39.851</td>
+  <td>3.19</td>
+  </tr>
+
+</table>
+</div>
+
+
+
+
+<div id="imagesandexternalinformation">
+
+<!-- Stamps, external data & possible associations -->
+
+
+<div id="stamps">
+
+  <table class="images">
+  <tr>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57928.58753
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.587_83897323_199_target.jpeg" alt="330_1_w_o7928g0608o.1262831.wrp.1897635.skycell.0792.085.fits" title="330_1_w_o7928g0608o.1262831.wrp.1897635.skycell.0792.085.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55774.50023
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.587_83897323_199_ref.jpeg" alt="329_1_w_RINGS.V3.skycell.0792.085.stk.1288021.unconv.fits" title="329_1_w_RINGS.V3.skycell.0792.085.stk.1288021.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57928.58753
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.587_83897323_199_diff.jpeg" alt="328_1_w_RINGS.V3.skycell.0792.085.WS.dif.1550797.fits" title="328_1_w_RINGS.V3.skycell.0792.085.WS.dif.1550797.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57928.58753
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.587_83897322_210_target.jpeg" alt="327_1_w_o7928g0608o.1262831.wrp.1897635.skycell.0792.084.fits" title="327_1_w_o7928g0608o.1262831.wrp.1897635.skycell.0792.084.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55774.50023
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.587_83897322_210_ref.jpeg" alt="326_1_w_RINGS.V3.skycell.0792.084.stk.1288020.unconv.fits" title="326_1_w_RINGS.V3.skycell.0792.084.stk.1288020.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57928.58753
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.587_83897322_210_diff.jpeg" alt="325_1_w_RINGS.V3.skycell.0792.084.WS.dif.1550797.fits" title="325_1_w_RINGS.V3.skycell.0792.084.WS.dif.1550797.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57928.57722
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.577_83895762_4300000000_target.jpeg" alt="33_1_w_o7928g0592o.1262809.wrp.1897622.skycell.0792.085.fits" title="33_1_w_o7928g0592o.1262809.wrp.1897622.skycell.0792.085.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55774.50023
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.577_83895762_4300000000_ref.jpeg" alt="32_1_w_RINGS.V3.skycell.0792.085.stk.1288021.unconv.fits" title="32_1_w_RINGS.V3.skycell.0792.085.stk.1288021.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57928.57722
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.577_83895762_4300000000_diff.jpeg" alt="31_1_w_RINGS.V3.skycell.0792.085.WS.dif.1550764.fits" title="31_1_w_RINGS.V3.skycell.0792.085.WS.dif.1550764.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57928.57722
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.577_83895761_4300000000_target.jpeg" alt="36_1_w_o7928g0592o.1262809.wrp.1897622.skycell.0792.084.fits" title="36_1_w_o7928g0592o.1262809.wrp.1897622.skycell.0792.084.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55774.50023
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.577_83895761_4300000000_ref.jpeg" alt="35_1_w_RINGS.V3.skycell.0792.084.stk.1288020.unconv.fits" title="35_1_w_RINGS.V3.skycell.0792.084.stk.1288020.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57928.57722
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.577_83895761_4300000000_diff.jpeg" alt="34_1_w_RINGS.V3.skycell.0792.084.WS.dif.1550764.fits" title="34_1_w_RINGS.V3.skycell.0792.084.WS.dif.1550764.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57928.56691
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.566_83894773_274_target.jpeg" alt="324_1_w_o7928g0576o.1262794.wrp.1897605.skycell.0792.085.fits" title="324_1_w_o7928g0576o.1262794.wrp.1897605.skycell.0792.085.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55774.50023
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.566_83894773_274_ref.jpeg" alt="323_1_w_RINGS.V3.skycell.0792.085.stk.1288021.unconv.fits" title="323_1_w_RINGS.V3.skycell.0792.085.stk.1288021.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57928.56691
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.566_83894773_274_diff.jpeg" alt="322_1_w_RINGS.V3.skycell.0792.085.WS.dif.1550742.fits" title="322_1_w_RINGS.V3.skycell.0792.085.WS.dif.1550742.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57928.56691
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.566_83894772_4300000000_target.jpeg" alt="30_1_w_o7928g0576o.1262794.wrp.1897605.skycell.0792.084.fits" title="30_1_w_o7928g0576o.1262794.wrp.1897605.skycell.0792.084.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55774.50023
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.566_83894772_4300000000_ref.jpeg" alt="29_1_w_RINGS.V3.skycell.0792.084.stk.1288020.unconv.fits" title="29_1_w_RINGS.V3.skycell.0792.084.stk.1288020.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57928.56691
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.566_83894772_4300000000_diff.jpeg" alt="28_1_w_RINGS.V3.skycell.0792.084.WS.dif.1550742.fits" title="28_1_w_RINGS.V3.skycell.0792.084.WS.dif.1550742.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57928.55661
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.556_83894213_4300000000_target.jpeg" alt="24_1_w_o7928g0560o.1262778.wrp.1897591.skycell.0792.085.fits" title="24_1_w_o7928g0560o.1262778.wrp.1897591.skycell.0792.085.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55774.50023
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.556_83894213_4300000000_ref.jpeg" alt="23_1_w_RINGS.V3.skycell.0792.085.stk.1288021.unconv.fits" title="23_1_w_RINGS.V3.skycell.0792.085.stk.1288021.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57928.55661
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.556_83894213_4300000000_diff.jpeg" alt="22_1_w_RINGS.V3.skycell.0792.085.WS.dif.1550727.fits" title="22_1_w_RINGS.V3.skycell.0792.085.WS.dif.1550727.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+        </tr><tr>
+     
+     <td>
+     <span id="imageinfo">
+     target
+     
+     (w)
+     
+     mjd: 57928.55661
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.556_83894212_4300000000_target.jpeg" alt="27_1_w_o7928g0560o.1262778.wrp.1897591.skycell.0792.084.fits" title="27_1_w_o7928g0560o.1262778.wrp.1897591.skycell.0792.084.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     ref
+     
+     (w)
+     
+     mjd: 55774.50023
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.556_83894212_4300000000_ref.jpeg" alt="26_1_w_RINGS.V3.skycell.0792.084.stk.1288020.unconv.fits" title="26_1_w_RINGS.V3.skycell.0792.084.stk.1288020.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+     
+     <td>
+     <span id="imageinfo">
+     diff
+     
+     (w)
+     
+     mjd: 57928.55661
+     </span>
+
+     
+     <img id="stampimages" src="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.556_83894212_4300000000_diff.jpeg" alt="25_1_w_RINGS.V3.skycell.0792.084.WS.dif.1550727.fits" title="25_1_w_RINGS.V3.skycell.0792.084.WS.dif.1550727.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  />
+     
+     </td>
+  
+  </tr>
+  </table>
+</div>
+
+
+
+<div id="externalinfo">
+<!-- possible associations -->
+
+
+<div id="associations">
+
+
+</div>
+
+
+
+<div id="wikisky">
+<h2>External Information</h2>
+<script type='text/javascript' src='http://wikisky.org/js/skywindow2'></script>
+<div style='position:relative;left:0px;top:0px;width:300px;height:300px'>
+<div id='mySkyWnd'
+  style='position:absolute;left:0;top:0;width:300px;height:300px;overflow:hidden;border:0px solid gray'
+  onmouseout='hideddrivetip();'></div></div>
+<script type="text/javascript">
+// NEED TO INPUT RA (DECIMAL HOURS) HERE 
+var options = {ra:22.8296194726, de:-24.4593526407, initZoom:6, zoom:9,
+  survey:"", imgSource:"DSS2", allowTopPanel:true, showTopPanel:true, showRightPanel:true,
+  allowMove:false, allowZoom:false,
+  showPanZoomControl:true, panZoomControlLeft:6, panZoomControlTop:10,
+  showScale:true, showStatus:false, showPosition:true, showStickers:false, showLabels:false,
+  jpegQuality:0.8,
+  showGrid:false, showOverlayGrid:false,
+  showConstLines:false, showOverlayConstLines:false,
+  showConstBoundaries:false, showOverlayConstBoundaries:false,
+  showConstNames:false, showOverlayConstNames:false,
+  showGalaxies:false, showOverlayGalaxies:false,
+  showStars:false, showOverlayStars:false,
+  buffer:1, moveTime:2000, smoothMoveAccelerationTime:500,
+  posColor:"lightgray",posFontSize:"8pt",posFontWeight:"normal",posFontFamily:"verdana",
+  scaleMaxLen:90, scaleHeight:6, scaleColor:"lightgray", scaleLineWidth:1
+};
+new SkyWindow2(options).attach($('#mySkyWnd')[0]);
+</script>
+</div>
+
+<!-- DR12 Navigate -->
+<div id="sdssdr12">
+<h3>SDSS DR12</h3>
+<a href="http://skyserver.sdss.org/dr12/en/tools/chart/navi.aspx?ra=342.44427899&dec=-24.4593526407&scale=0.5&width=500&height=500&opt=GPS" onmouseover="document.images['s1a'].src='http://skyservice.pha.jhu.edu/DR12/ImgCutout/getjpeg.aspx?ra=342.44427899&dec=-24.4593526407&scale=0.5&width=500&height=500&opt=GPSI';" onmouseout="document.images['s1a'].src='http://skyservice.pha.jhu.edu/DR12/ImgCutout/getjpeg.aspx?ra=342.44427899&dec=-24.4593526407&scale=0.5&width=500&height=500&opt=GPS';">
+<img src="http://skyservice.pha.jhu.edu/DR12/ImgCutout/getjpeg.aspx?ra=342.44427899&dec=-24.4593526407&scale=0.5&width=500&height=500&opt=GPS" name="s1a"  height="300" width="300"  alt="" border="0"></a>
+</div>
+
+
+
+<div id="externallinks">
+<!-- WIKISKY --> <!-- NEED TO INPUT RA (DECIMAL HOURS) HERE x 2 -->
+<div class="links">
+<a href="http://www.wikisky.org/?ra=22.8296194726&de=-24.4593526407&zoom=13&show_grid=1&show_constellation_lines=1&show_constellation_boundaries=1&show_const_names=0&show_galaxies=1&show_box=1&box_ra=22.8296194726&box_de=-24.4593526407&box_width=50&box_height=50&img_source=DSS2" target="blank">WIKISKY</a>
+</div>
+
+<!-- SDSS DR12 NAVIGATE LINK -->
+<div class="links">
+<a href="http://skyserver.sdss.org/dr12/en/tools/chart/navi.aspx?ra=342.44427899&dec=-24.4593526407&scale=0.1&width=500&height=500&opt=GPS" target="blank">SDSS DR12 Navigate</a>
+</div>
+
+<!--SDSS DR12 NEAREST OBJECT (EXPLORE TOOL - currently broken) -->
+<!--
+<div class="links">
+<a href="http://skyserver.sdss.org/dr12/en/tools/explore/Summary.aspx?ra=342.44427899&dec=-24.4593526407" target="blank">SDSS DR12 Nearest Object</a>
+</div>
+-->
+
+
+
+<!-- NED LINK -->
+<div class="links">
+<a href="http://nedwww.ipac.caltech.edu/cgi-bin/nph-objsearch?in_csys=Equatorial&in_equinox=J2000.0&lon=342.444279d&lat=-24.459353d&radius=0.16667&hconst=73&omegam=0.27&omegav=0.73&corr_z=1&z_constraint=Unconstrained&z_value1=&z_value2=&z_unit=z&search_type=Near+Position+Search&ot_include=ANY&nmp_op=ANY&out_csys=Equatorial&out_equinox=J2000.0&obj_sort=Distance+to+search+center&of=pre_text&zv_breaker=30000.0&list_limit=5&img_stamp=YES" target="_blank">NED: 10 arcsec radius</a>
+</div>
+
+<!-- LEDA -->
+<div class="links">
+<a href="http://leda.univ-lyon1.fr/fG.cgi?n=0&c=o&p=J342.44427899d-24.4593526407d&f=0.16667&ob=ra" target="blank">LEDA: 10 arcsec radius</a>
+</div>
+
+<!-- SIMBAD -->
+<div class="links">
+<a href="http://simbad.u-strasbg.fr/simbad/sim-coo?Coord=342.44427899d-24.4593526407d&Radius=10&Radius.unit=arcsec&CooFrame=FK5&CooEqui=2000&CooEpoch=2000" target="blank">SIMBAD: 10 arcsec radius</a>
+</div>
+
+<!-- Galactic Extinction -->
+<div class="links">
+<a href="http://nedwww.ipac.caltech.edu/cgi-bin/nph-calc?in_csys=Equatorial&in_equinox=J2000.0&obs_epoch=2000.0&lon=342.44427899d&lat=-24.4593526407d&pa=0.0&out_csys=Equatorial&out_equinox=J2000.0" target="blank">Galactic Extinction</a>
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+<div id="finders">
+<h2>Finder Chart(s)</h2>
+<ul>
+
+<li><a href="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.566_83894773_274_reffinder.jpeg"><img src="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.566_83894773_274_reffinder.jpeg" alt="24_1_w_RINGS.V3.skycell.0792.085.stk.1288021.unconv.fits" title="24_1_w_RINGS.V3.skycell.0792.085.stk.1288021.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  /></a></li>
+
+<li><a href="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.566_83894773_274_targetfinder.jpeg"><img src="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.566_83894773_274_targetfinder.jpeg" alt="24_1_w_o7928g0576o.1262794.wrp.1897605.skycell.0792.085.fits" title="24_1_w_o7928g0576o.1262794.wrp.1897605.skycell.0792.085.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  /></a></li>
+
+<li><a href="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.587_83897323_199_reffinder.jpeg"><img src="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.587_83897323_199_reffinder.jpeg" alt="23_1_w_RINGS.V3.skycell.0792.085.stk.1288021.unconv.fits" title="23_1_w_RINGS.V3.skycell.0792.085.stk.1288021.unconv.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  /></a></li>
+
+<li><a href="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.587_83897323_199_targetfinder.jpeg"><img src="/ps1threepi/site_media/images/data/ps13pipublic/57928/1224946630242733600_57928.587_83897323_199_targetfinder.jpeg" alt="23_1_w_o7928g0608o.1262831.wrp.1897635.skycell.0792.085.fits" title="23_1_w_o7928g0608o.1262831.wrp.1897635.skycell.0792.085.fits" onerror="this.src='/ps1threepi/site_media/images/image_not_available.jpeg';"  height="250px"  /></a></li>
+
+</ul>
+</div>
+
+
+
+<!-- 2011-04-04 KWS Added the User Defined Lists -->
+
+
+
+</article>
+</section>
+</div>
+
+</body>
+</html>
