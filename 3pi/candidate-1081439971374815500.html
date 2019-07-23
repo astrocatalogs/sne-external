@@ -4,6 +4,10 @@
 <meta charset="utf-8" />
 <link rel="stylesheet" href="/ps1threepi/site_media/css/main.css" type="text/css"/>
 
+<!-- include Aladin Lite CSS file in the head section of your page -->
+<!-- <link rel="stylesheet" href="http://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.css" /> -->
+<link rel="stylesheet" href="/ps1threepi/site_media/css/aladin.css" />
+
 <title>Candidate 1081439971374815500</title>
 
 
@@ -44,11 +48,11 @@ var jslabels = new Array();
 
 // 2013-02-14 KWS Change the xmin to the FIRST value of the xmin array (which doesn't include the limit dates).
 var jslclimits = {  "xmin": 56598.623541, 
-                   "xmax": 58684.472775,
+                   "xmax": 58686.4722822,
                    "ymin": 20.9189,
                    "ymax": 21.0845,
                    "discoveryDate": 57360.5766093,
-                   "today": 58684.472775 };
+                   "today": 58686.4722822 };
 
 jslimitsglobal["#flot-lightcurve"] = jslclimits;
 
@@ -108,7 +112,7 @@ jslimitsglobal["#flot-lightcurve"] = jslclimits;
   
     jslcdata.push([[56694.2721356377, 20.31338028443836], [56694.2847218243, 19.74354628443836], [56694.2980938311, 19.111735284438357], [56694.3106606844, 18.296084284438358], [57349.5309609473, 20.15312428443836], [57349.5430114529, 20.187786284438356], [57349.5909537785, 20.34365228443836], [57349.6048660981, 20.60384228443836], [57408.3894367376, 20.39877628443836], [57408.3999005194, 20.16019628443836], [57408.4104166311, 20.410272284438356], [57408.4209070477, 20.524497284438358], [57705.5777003359, 20.759003284438357], [57705.5886778544, 20.170476284438358], [57705.5997166978, 20.43745528443836], [57705.6107846987, 20.28770828443836], [58061.617814097, 20.01789728443836], [58061.6236325144, 20.033414284438358], [58061.6294528683, 20.03744928443836], [58061.6353028949, 20.003003284438357], [58098.4758585488, 21.82540598443836], [58098.4868753349, 21.814078284438356], [58098.4978676573, 21.61985468443836], [58098.5088763133, 21.275298584438357], [58124.4599221195, 20.662343284438357], [58124.4733255915, 20.57676928443836], [58124.4868197255, 20.78655728443836], [58124.5003406662, 20.791338284438357]]);
   
-    jslcdata.push([[56598.6235409818, 19.487758125959108], [56787.2515970138, 20.855063025959108], [57010.65751589, 20.08024913679916], [57010.6606457425, 19.660170136799152], [57178.2599111308, 20.420328136799156]]);
+    jslcdata.push([[56598.6235409818, 19.487758125959108], [56787.2515970138, 20.855063025959108], [57010.65751589, 20.08024913679916], [57010.6606457425, 19.660170136799152], [57178.2599111308, 20.420328136799156], [58578.2382559963, 20.4], [58579.2387033481, 20.4], [58580.2388223015, 20.4], [58581.2386067795, 20.4], [58582.2403534789, 20.4], [58583.2400119215, 20.4], [58589.240760887, 20.4], [58590.2415065248, 20.4], [58591.2413768554, 20.4]]);
   
     jslcdata.push([[56786.2387472595, 19.35845696747986], [57007.669999572, 16.809431136799155], [57010.6721078195, 17.896353136799156], [57121.2234235689, 17.326676136799158], [57121.2252333016, 17.995243136799157], [57128.2274472034, 17.857331636799156], [58053.6535481461, 18.463379136799155]]);
   
@@ -274,7 +278,7 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 <li>
 
 
-<form id="search_form" action="/ps1threepi/searchresults/" method="post"><input type='hidden' name='csrfmiddlewaretoken' value='dmA8pQMBJD4HwBGrmGJRvIybHLCz4IpY' />
+<form id="search_form" action="/ps1threepi/searchresults/" method="post"><input type='hidden' name='csrfmiddlewaretoken' value='IqO2bCMRSUzkymqlD1Q4LECrSVpzw6ys' />
     
     <div class="fieldWrapper">
     <p>
@@ -300,6 +304,7 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 </h1>
 <h2>&nbsp;</h2>
 <h2>08:14:39.97 +37:48:15.6</h2>
+<h2>(123.66656 +37.80434)</h2>
 
 </hgroup>
 </header>
@@ -321,6 +326,7 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 </header>
 
 
+<script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/flot/jquery-1.7.2.js"></script>
 <!-- lightcurve and recurrence plot -->
 <!-- 2012-12-17 KWS Had to specify images sizes below in PIXELS not percentages, otherwise Firefox doesn't render correctly. -->
 <div id="mainplots">
@@ -330,7 +336,33 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
     </div>
     <div id="recurrenceandlocaitonmap">
         <div id="flot-recurrenceplot"></div>
-        <div id="locationmap"><center><a href="/ps1threepi/site_media/images/location_maps/1081439971374815500_np.png"><img src="/ps1threepi/site_media/images/location_maps/1081439971374815500_np.png" height="239"  border="0" /></a></center></div>
+        <div id="locationmap"><!-- insert this snippet where you want Aladin Lite viewer to appear and after the loading of jQuery -->
+            <div id="aladin-lite-div" style="width:250px;height:250px;"></div>
+            <!-- <script type="text/javascript" src="http://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.js" charset="utf-8"></script> -->
+            <script type="text/javascript" src="/ps1threepi/site_media/js/aladin.js" charset="utf-8"></script>
+            <script type="text/javascript">
+                var imagesurvey = "P/PanSTARRS/DR1/color-z-zg-g";
+                var aladin = A.aladin('#aladin-lite-div', {survey: imagesurvey, fov:0.02, target: "08:14:39.97 +37:48:15.6"});
+                var contextcat = A.catalog({name: 'Catalogue Sources', sourceSize: 10, color: "blue"});
+            
+                // 2018-08-10 KWS Added PS1 DR1 and Gaia DR2 catalogs
+                var hipsCats = {
+                  'ps1': A.catalogHiPS('https://axel.u-strasbg.fr/HiPSCatService/II/349/ps1', {name: 'PanSTARRS DR1 sources', shape: 'circle', sourceSize: 8, color: '#6baed6', onClick: 'showTable', name: 'PanSTARRS DR1'}),
+                  'gdr2': A.catalogHiPS('https://axel.u-strasbg.fr/HiPSCatService/I/345/gaia2', {name: 'Gaia DR2 sources', shape: 'circle', sourceSize: 8, color: '#d66bae', onClick: 'showTable', name: 'Gaia DR2'})
+                };
+                hipsCats['ps1'].hide();
+                hipsCats['gdr2'].hide();
+                aladin.addCatalog(hipsCats['ps1']);
+                aladin.addCatalog(hipsCats['gdr2']);
+
+                aladin.addCatalog(contextcat);
+                
+                var cat = A.catalog({name: 'Transient', sourceSize: 10, color: "red"});
+                aladin.addCatalog(cat, {shape: "square"});
+                cat.addSources([A.marker(123.666563131, 37.8043412543, {popupTitle: "1081439971374815500"})]);
+            </script>
+        </div>
+
     </div>
 </div>
 
@@ -346,7 +378,6 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 
 
 
-<script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/flot/jquery-1.7.2.js"></script>
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/flot/excanvas.js"></script><![endif]-->
 <script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/flot/jquery.flot.js"></script>
 <script language="javascript" type="text/javascript" src="/ps1threepi/site_media/js/flot/jquery.flot.errorbars.js"></script>
@@ -1167,7 +1198,7 @@ var b = new Image(); b.src = 'http://skyservice.pha.jhu.edu/DR9/ImgCutout/getjpe
 </div>
 
 
-
+<!-- 2019-07-17 KWS The WikiSky javascript appears to have stopped working. Will restore this code when it starts working again
 <div id="wikisky">
 <h2>External Information</h2>
 <script type='text/javascript' src='http://wikisky.org/js/skywindow2'></script>
@@ -1196,12 +1227,13 @@ var options = {ra:8.24443686674, de:37.8043412543, initZoom:6, zoom:9,
 new SkyWindow2(options).attach($('#mySkyWnd')[0]);
 </script>
 </div>
+-->
 
-<!-- DR12 Navigate -->
+<!-- DR15 Navigate -->
 <div id="sdssdr12">
-<h3>SDSS DR12</h3>
-<a href="http://skyserver.sdss.org/dr12/en/tools/chart/navi.aspx?ra=123.666563131&dec=37.8043412543&scale=0.5&width=500&height=500&opt=GPS" onmouseover="document.images['s1a'].src='http://skyservice.pha.jhu.edu/DR12/ImgCutout/getjpeg.aspx?ra=123.666563131&dec=37.8043412543&scale=0.5&width=500&height=500&opt=GPSI';" onmouseout="document.images['s1a'].src='http://skyservice.pha.jhu.edu/DR12/ImgCutout/getjpeg.aspx?ra=123.666563131&dec=37.8043412543&scale=0.5&width=500&height=500&opt=GPS';">
-<img src="http://skyservice.pha.jhu.edu/DR12/ImgCutout/getjpeg.aspx?ra=123.666563131&dec=37.8043412543&scale=0.5&width=500&height=500&opt=GPS" name="s1a"  height="300" width="300"  alt="" border="0"></a>
+<h3>SDSS DR15</h3>
+<a href="http://skyserver.sdss.org/dr15/en/tools/chart/navi.aspx?ra=123.666563131&dec=37.8043412543&scale=0.5&width=500&height=500&opt=GPS" onmouseover="document.images['s1a'].src='http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=123.666563131&dec=37.8043412543&scale=0.5&width=500&height=500&opt=GPSI';" onmouseout="document.images['s1a'].src='http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=123.666563131&dec=37.8043412543&scale=0.5&width=500&height=500&opt=GPS';">
+<img src="http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=123.666563131&dec=37.8043412543&scale=0.5&width=500&height=500&opt=GPS" name="s1a"  height="300" width="300"  alt="" border="0"></a>
 </div>
 
 
@@ -1212,9 +1244,9 @@ new SkyWindow2(options).attach($('#mySkyWnd')[0]);
 <a href="http://www.wikisky.org/?ra=8.24443686674&de=37.8043412543&zoom=13&show_grid=1&show_constellation_lines=1&show_constellation_boundaries=1&show_const_names=0&show_galaxies=1&show_box=1&box_ra=8.24443686674&box_de=37.8043412543&box_width=50&box_height=50&img_source=DSS2" target="blank">WIKISKY</a>
 </div>
 
-<!-- SDSS DR12 NAVIGATE LINK -->
+<!-- SDSS DR15 NAVIGATE LINK -->
 <div class="links">
-<a href="http://skyserver.sdss.org/dr12/en/tools/chart/navi.aspx?ra=123.666563131&dec=37.8043412543&scale=0.1&width=500&height=500&opt=GPS" target="blank">SDSS DR12 Navigate</a>
+<a href="http://skyserver.sdss.org/dr15/en/tools/chart/navi.aspx?ra=123.666563131&dec=37.8043412543&scale=0.1&width=500&height=500&opt=GPS" target="blank">SDSS DR15 Navigate</a>
 </div>
 
 <!--SDSS DR12 NEAREST OBJECT (EXPLORE TOOL - currently broken) -->
@@ -1228,23 +1260,31 @@ new SkyWindow2(options).attach($('#mySkyWnd')[0]);
 
 <!-- NED LINK -->
 <div class="links">
-<a href="http://nedwww.ipac.caltech.edu/cgi-bin/nph-objsearch?in_csys=Equatorial&in_equinox=J2000.0&lon=123.666563d&lat=37.804341d&radius=0.16667&hconst=73&omegam=0.27&omegav=0.73&corr_z=1&z_constraint=Unconstrained&z_value1=&z_value2=&z_unit=z&search_type=Near+Position+Search&ot_include=ANY&nmp_op=ANY&out_csys=Equatorial&out_equinox=J2000.0&obj_sort=Distance+to+search+center&of=pre_text&zv_breaker=30000.0&list_limit=5&img_stamp=YES" target="_blank">NED: 10 arcsec radius</a>
+<a href="http://nedwww.ipac.caltech.edu/cgi-bin/nph-objsearch?in_csys=Equatorial&in_equinox=J2000.0&lon=123.666563d&lat=37.804341d&radius=2.0&hconst=73&omegam=0.27&omegav=0.73&corr_z=1&z_constraint=Unconstrained&z_value1=&z_value2=&z_unit=z&search_type=Near+Position+Search&ot_include=ANY&nmp_op=ANY&out_csys=Equatorial&out_equinox=J2000.0&obj_sort=Distance+to+search+center&of=pre_text&zv_breaker=30000.0&list_limit=5&img_stamp=YES" target="_blank">NED: 2 arcmin radius</a>
 </div>
 
 <!-- LEDA -->
 <div class="links">
-<a href="http://leda.univ-lyon1.fr/fG.cgi?n=0&c=o&p=J123.666563131d37.8043412543d&f=0.16667&ob=ra" target="blank">LEDA: 10 arcsec radius</a>
+<a href="http://leda.univ-lyon1.fr/fG.cgi?n=0&c=o&p=J123.666563131d37.8043412543d&f=2.0&ob=ra" target="blank">LEDA: 2 arcmin radius</a>
 </div>
 
 <!-- SIMBAD -->
 <div class="links">
-<a href="http://simbad.u-strasbg.fr/simbad/sim-coo?Coord=123.666563131d37.8043412543d&Radius=10&Radius.unit=arcsec&CooFrame=FK5&CooEqui=2000&CooEpoch=2000" target="blank">SIMBAD: 10 arcsec radius</a>
+<a href="http://simbad.u-strasbg.fr/simbad/sim-coo?Coord=123.666563131d37.8043412543d&Radius=120&Radius.unit=arcsec&CooFrame=FK5&CooEqui=2000&CooEpoch=2000" target="blank">SIMBAD: 2 arcmin radius</a>
 </div>
 
 <!-- Galactic Extinction -->
 <div class="links">
-<a href="http://nedwww.ipac.caltech.edu/cgi-bin/nph-calc?in_csys=Equatorial&in_equinox=J2000.0&obs_epoch=2000.0&lon=123.666563131d&lat=37.8043412543d&pa=0.0&out_csys=Equatorial&out_equinox=J2000.0" target="blank">Galactic Extinction</a>
+<a href="http://nedwww.ipac.caltech.edu/cgi-bin/nph-calc?in_csys=Equatorial&in_equinox=J2000.0&obs_epoch=2000.0&lon=123.66656d&lat=37.80434d&pa=0.0&out_csys=Equatorial&out_equinox=J2000.0" target="blank">Galactic Extinction</a>
 </div>
+
+
+<!-- PS1 Stamp Server -->
+<div class="links">
+<a href="http://plpsipp1v.stsci.edu/cgi-bin/ps1cutouts?pos=123.666563131+37.8043412543&filter=color&filter=g&filter=r&filter=i&filetypes=stack&auxiliary=data&size=240&output_size=512&verbose=0&autoscale=99.500000&catlist=" target="blank">PS1 Stamp</a>
+</div>
+
+
 </div>
 
 </div>
